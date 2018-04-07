@@ -18,13 +18,14 @@ def check(ls, lst):
             lst -= 1
     except IndexError:
         print('IMPOSSIBLE')
-        return False
+        return -1
     return lst
 
 
 for i in range(1, T + 1):
-    D = int(input())
-    P = list(input())
+    S = input().split()
+    D = int(S[0])
+    P = list(S[1])
     len_P = P.__len__()
 
     hack = 0
@@ -33,7 +34,7 @@ for i in range(1, T + 1):
     while Kick(P) > D:
         last = P[::-1].index('S')
         last = check(P, len_P - last - 1)
-        if (not last) and last != 0:
+        if last == -1:
             r = False
             break
         P[last], P[last + 1] = P[last + 1], P[last]

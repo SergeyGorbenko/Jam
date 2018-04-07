@@ -1,6 +1,6 @@
 cases = int(input())
 i = 0
-while (i < cases):
+while i < cases:
     number = int(input())
     list = input().split()
     list = [int(i) for i in list]
@@ -15,7 +15,7 @@ while (i < cases):
             j += 1
     j = 0
     if_wrong = True
-    while (j < number - 1):
+    while j < number - 1:
         if list[j] > list[j + 1]:
             print('Case #' + str(i + 1) + ': ' + str(j))
             if_wrong = False
