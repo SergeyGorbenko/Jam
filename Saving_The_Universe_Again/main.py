@@ -6,7 +6,7 @@ def Kick(ls):
     strange = 1
     for c in ls:
         if c == 'C':
-            strange = strange << 1
+            strange = strange * 2
         else:
             push += strange
     return push
@@ -26,9 +26,11 @@ for i in range(1, T + 1):
     S = input().split()
     D = int(S[0])
     P = list(S[1])
+
     len_P = P.__len__()
 
     hack = 0
+
     last = -1
     r = True
     while Kick(P) > D:
