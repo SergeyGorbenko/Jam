@@ -12,16 +12,18 @@ def Kick(ls):
     return push
 
 
-def check(ls, lst):
+def check(k, ls, lst):
     while ls[lst] == 'S':
             lst -= 1
             if lst == -1:
-                print('IMPOSSIBLE')
+                print('Case #{}: IMPOSSIBLE'.format(k))
+                break
     return lst
 
 
 for i in range(1, T + 1):
     S = input().split()
+
     D = int(S[0])
     P = list(S[1])
 
@@ -33,7 +35,7 @@ for i in range(1, T + 1):
     r = True
     while Kick(P) > D:
         last = P[::-1].index('S')
-        last = check(P, len_P - last - 1)
+        last = check(i, P, len_P - last - 1)
         if last == -1:
             r = False
             break
