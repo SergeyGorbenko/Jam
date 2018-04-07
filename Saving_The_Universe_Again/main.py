@@ -13,12 +13,10 @@ def Kick(ls):
 
 
 def check(ls, lst):
-    try:
-        while ls[lst] == 'S':
+    while ls[lst] == 'S':
             lst -= 1
-    except IndexError:
-        print('IMPOSSIBLE')
-        return -1
+            if lst == -1:
+                print('IMPOSSIBLE')
     return lst
 
 
